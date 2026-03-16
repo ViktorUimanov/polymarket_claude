@@ -1,0 +1,19 @@
+{
+  "starting": 10000.00,
+  "cash": 8450.00,
+  "total_pnl": -200.00,
+  "open_exposure": 1350.00,
+  "last_updated": "2026-03-16 19:00 UTC",
+  "last_trade_date": "2026-03-16",
+  "trade_history": [
+    {
+      "date": "2026-03-15",
+      "market": "Sinners Best Picture (Oscars 2026)",
+      "direction": "YES",
+      "size": 200.0,
+      "outcome": "LOSS",
+      "pnl": -200.0,
+      "notes": "Bugonia won. Did not check all nominees."
+    }
+  ]
+}

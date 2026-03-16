@@ -1,0 +1,13 @@
+# Local secrets — never commit
+.claude/settings.local.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# SQLite (contains trade history — optional: remove this line if you want DB in git)
+knowledge/polymarket.db
+
+# Generated signal
+knowledge/signal.json

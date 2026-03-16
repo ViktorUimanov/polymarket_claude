@@ -1,0 +1,75 @@
+{
+  "last_updated": "2026-03-16 19:00 UTC",
+  "positions": [
+    {
+      "market_id": "958443",
+      "question": "Will the Iranian regime fall by June 30, 2026?",
+      "category": "politics",
+      "direction": "NO",
+      "entry_price": 0.705,
+      "shares": 283.69,
+      "size": 200.0,
+      "entry_date": "2026-03-16",
+      "end_date": "2026-06-30",
+      "stated_prob": 88.0,
+      "trade_file": "output/trades/2026-03-16_iran-regime-june-no.md",
+      "notes": "Fair value 88-92% NO. Market 70.5% NO. +17-22pp edge. IRGC intact, succession completed. Max 3% politics cap."
+    },
+    {
+      "market_id": "1467766",
+      "question": "Will WTI crude oil settle at or above $100 before end of March 2026?",
+      "category": "commodities",
+      "direction": "YES",
+      "entry_price": 0.888,
+      "shares": 337.84,
+      "size": 300.0,
+      "entry_date": "2026-03-15",
+      "end_date": "2026-03-31",
+      "stated_prob": 91.0,
+      "trade_file": "output/trades/2026-03-15_crude-oil-100-high.md",
+      "notes": "Gap was $1.29 on entry day (settlement $98.71 vs $100 target). 11 trading days remaining."
+    },
+    {
+      "market_id": "1467763",
+      "question": "Will WTI crude oil settle at or above $120 before end of March 2026?",
+      "category": "commodities",
+      "direction": "NO",
+      "entry_price": 0.540,
+      "shares": 740.74,
+      "size": 400.0,
+      "entry_date": "2026-03-15",
+      "end_date": "2026-03-31",
+      "stated_prob": 62.0,
+      "trade_file": "output/trades/2026-03-15_crude-oil-120-high-no.md",
+      "notes": "Settlement price systematically below intraday. Max settlement $98.71, need 21.5% more gain."
+    },
+    {
+      "market_id": "566187",
+      "question": "Will Arsenal win the 2025-26 EPL title?",
+      "category": "sports",
+      "direction": "YES",
+      "entry_price": 0.895,
+      "shares": 335.2,
+      "size": 300.0,
+      "entry_date": "2026-03-15",
+      "end_date": "2026-05-27",
+      "stated_prob": 95.0,
+      "trade_file": "output/trades/2026-03-15_arsenal-epl.md",
+      "notes": "9-point lead, 9 games remaining. Historical: 97-99% conversion rate."
+    },
+    {
+      "market_id": "musk-tweets-march-2026",
+      "question": "Will Elon Musk post 300-319 tweets March 10-17, 2026?",
+      "category": "other",
+      "direction": "YES",
+      "entry_price": 0.285,
+      "shares": 526.3,
+      "size": 150.0,
+      "entry_date": "2026-03-15",
+      "end_date": "2026-03-17",
+      "stated_prob": 37.5,
+      "trade_file": "output/trades/2026-03-15_musk-tweets-300-319.md",
+      "notes": "227 tweets through 5 days. Pace: 45.4/day. Projected: ~318. PAST END DATE — run /resolve to check outcome. Market ID is a placeholder — real ID unknown (low volume market)."
+    }
+  ]
+}
