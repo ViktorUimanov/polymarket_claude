@@ -2,7 +2,7 @@
 
 **Read this file first. Every session. One read = full situational awareness.**
 
-Last updated: 2026-03-16
+Last updated: 2026-03-17 22:45 UTC
 
 ---
 
@@ -12,11 +12,11 @@ Last updated: 2026-03-16
 |--|--|
 | **Goal** | $100,000 total portfolio |
 | **Starting bankroll** | $10,000 |
-| **Cash** | $8,450 |
-| **Open exposure** | $1,350 |
-| **Total (est.)** | $9,800 |
-| **Realized P&L** | −$200 (1 loss: Oscars) |
-| **Progress to goal** | 0% (need +$90,200) |
+| **Cash** | $7,609.30 |
+| **Open exposure** | $2,055 |
+| **Total (est.)** | $9,664.30 |
+| **Realized P&L** | −$335.70 (Oscars −$200, WTI $100 exit −$56.10, Musk tweets −$150, Trump China exit +$70.40) |
+| **Progress to goal** | 0% (need +$90,256) |
 
 ---
 
@@ -37,11 +37,20 @@ Or read it directly. Flags set by heartbeat every 13 min:
 
 | Position | Direction | Entry | Size | Ends | Alert |
 |----------|-----------|-------|------|------|-------|
-| WTI Oil ≥ $100 | YES | 88.8% | $300 | 2026-03-31 | Check CME settlement daily |
-| WTI Oil ≥ $120 | NO | 54.0% | $400 | 2026-03-31 | Check CME settlement daily |
+| WTI Oil ≥ $120 | NO | 54.0% | $400 | 2026-03-31 | Thesis STRONG — settlement $93.50, needs +28% |
+| WTI Oil $110 settlement | NO | 51.5% | $200 | 2026-03-31 | Thesis STRONG — settlement $93.50, needs +18% |
 | Arsenal EPL winner | YES | 89.5% | $300 | 2026-05-27 | Monitor weekly |
-| Musk 300–319 tweets | YES | 28.5% | $150 | 2026-03-17 | **PAST END DATE — resolve** |
-| Iran regime fall June | NO | 70.5% | $200 | 2026-06-30 | Monitor monthly |
+| Iran ceasefire Apr 30 | NO | 60.5% | $200 | 2026-04-30 | Both sides maximalist — monitor weekly |
+| Iran regime fall June | NO | 70.5% | $200 | 2026-06-30 | IRGC intact — monitor monthly |
+| Iran regime fall 2027 | NO | 60.5% | $200 | 2026-12-31 | Succession smooth — monitor monthly |
+| Slovenia SDS NO | NO | 19.0% | $100 | 2026-03-22 | **[RESOLVES MARCH 22] Check election results** |
+| Ken Paxton TX Senate | YES | 38.5% | $170 | 2026-05-26 | Exit if Trump endorses Cornyn |
+| US confirms aliens exist | NO | 84.5% | $200 | 2026-12-31 | Monitor quarterly |
+| Colorado Avalanche Cup | YES | 21.6% | $85 | 2026-06-30 | Topped up $50 Mar 17. Sportsbooks 24-28%, at cap ($385 sports) |
+
+**CLOSED this period:** WTI ≥ $100 YES — exited at 72.2¢ (entry 88.8¢), loss −$56.10. Bessent + IEA supply changed thesis.
+**CLOSED this period:** Trump China YES — exited at 48.5¢ (entry 33.0¢), gain +$70.40. Trump requested delay; fair value dropped below market.
+**RESOLVED LOSS:** Musk 300-319 tweets — resolved NO, loss −$150. Weekend slowdown; weekday extrapolation failed. Live data required.
 
 ```bash
 python3 scripts/portfolio.py   # MTM valuations + alerts
@@ -58,9 +67,10 @@ python3 scripts/calibration.py --summary
 | Category | Trades | Win% | Error | Status |
 |----------|--------|------|-------|--------|
 | oscars | 1 | 0% | −24pp | OVERCONFIDENT — 8pp min edge, max 2% |
-| sports | 0 | — | — | No data — use category defaults |
-| commodities | 0 | — | — | No data — 2 open trades |
-| politics | 0 | — | — | No data — 1 open trade |
+| other | 1 | 0% | −38pp | OVERCONFIDENT — 8pp min edge, max 2% |
+| sports | 0 | — | — | No data — 2 open trades |
+| commodities | 0 | — | — | No data — 2 open, 1 voluntary exit |
+| politics | 0 | — | — | No data — 5 open, Slovenia resolves Mar 22 |
 | crypto | 0 | — | — | No data |
 
 ---
@@ -95,12 +105,14 @@ Full rules: `knowledge/GOLDEN_RULES.md`
 
 ## What To Do This Session
 
-1. Read `knowledge/signal.json` — act on flags
-2. Run `python3 scripts/calibration.py --summary`
-3. If `resolve_needed`: run `/resolve` first
-4. If `scan_needed`: run `/scan`
-5. For each trade candidate: read `knowledge/market_types/<category>.md` before researching
-6. After any trade: update `output/positions.json` and `output/bankroll.json`
+Every session runs the full cycle — all steps, every time:
+
+1. If `resolve_needed` → run `/resolve` first
+2. **Always run `/scan`** — every session, regardless of `scan_needed` flag. Find edge. Try new angles.
+3. If `learn_needed` → run `/learn`
+4. After any trade: update `output/positions.json` and `output/bankroll.json`
+
+Scanning is never optional. The goal is continuous research.
 7. Check goal: `python3 -c "import json; b=json.loads(open('output/bankroll.json').read()); print(b['cash']+b['open_exposure'])"`
 
 ---
@@ -136,7 +148,10 @@ python3 scripts/cross_platform.py --query "..." # external probability check
 
 | Strategy | Status | Win Rate | Notes |
 |----------|--------|----------|-------|
-| Settlement gap (commodities) | TESTING | — | Oil positions open |
-| EPL large points lead | TESTING | — | Arsenal open |
-| Status quo NO (geopolitical) | TESTING | — | Iran NO open |
+| Settlement gap (commodities) | TESTING | 0/0 | 2 open oil NOs resolve Mar 31 |
+| EPL large points lead | TESTING | 0/0 | Arsenal open, resolves May |
+| Status quo NO (geopolitical) | TESTING | 0/0 | 3 Iran NOs open |
+| Sportsbook vs Polymarket gap | TESTING | 0/0 | Avalanche Cup open |
+| Tightening-race proportional election | TESTING | 0/0 | Slovenia SDS NO resolves Mar 22 — FIRST LIVE TEST |
+| Short-window count frequency | TESTING | 0/1 | Musk tweets LOSS — revised: live data required |
 | Guild predictor (awards) | UNDERPERFORMING | 0/1 | SAG failed vs Oscars 2026 |

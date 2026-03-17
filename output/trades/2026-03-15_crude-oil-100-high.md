@@ -1,6 +1,6 @@
 # Trade: Crude Oil (CL) $100 HIGH by End of March
 
-**Status:** OPEN
+**Status:** CLOSED (early exit 2026-03-16)
 **Date:** 2026-03-15
 **Market ID:** 1467766
 **Slug:** will-crude-oil-cl-hit-high-100-by-end-of-march-658-396-769-971
@@ -77,9 +77,14 @@ This is a small but real edge. The position size is conservative (3%) reflecting
 
 ---
 
-## Outcome (To be filled after resolution)
+## Outcome
 
-**Resolution Date:** End of March 2026 (final trading day ~March 31)
-**Result:** [PENDING]
-**P&L:** [PENDING]
-**Post-mortem:** [PENDING]
+**Exit Date:** 2026-03-16
+**Exit Price:** $0.722 (market moved to 72.2% YES)
+**Proceeds:** 337.84 × $0.722 = $243.90
+**Cost:** $300.00
+**Result:** CLOSED_EARLY — Voluntary exit
+**P&L:** -$56.10
+**Reason:** See output/trades/2026-03-16_crude-oil-100-exit.md for full post-mortem.
+
+Summary: Bessent (Treasury) announced US allowing Iranian tankers through Hormuz + IEA emergency supply flowing. CME settlement dropped to $93.50 (-5.28%). Gap to $100 widened from $1.29 to $6.50. Fair value revised from 91% to 58-65% → market 72.2% became negative edge. Exit EV > hold EV by ~$34.

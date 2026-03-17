@@ -1,57 +1,90 @@
-Perform a systematic market opportunity scan across all Polymarket categories.
+Perform a systematic market opportunity scan. The goal is to find edge — not just browse the top markets by volume (those are the most efficient). Use a research-first, events-based approach.
+
+## Scan Philosophy
+
+**Top markets by volume = worst place for edge.** The best opportunities are in:
+- Short-term events (next 1–7 days) where you can calculate probabilities from current data
+- Events with less volume but clear information advantage
+- Markets where the crowd is anchored to narrative, not fundamentals
+- Specific match/game markets where sportsbook lines differ from Polymarket
+
+Always trial-and-error. Try new search strategies. If one approach finds nothing, try a different angle.
+
+---
 
 ## Scan Steps
 
 ### 1. Load Context
 ```bash
 python3 /root/workspace/polymarket/scripts/portfolio.py --bankroll-only
+cat knowledge/signal.json
 ```
-Read `knowledge/README.md` and `knowledge/edge_sources.md` to know what to look for.
+Read `knowledge/edge_sources.md` to know what has produced edge before.
 
-### 2. Fetch Markets by Category (run in parallel)
+### 2. Fetch Events (PRIMARY — do this first)
 
-Use the researcher agent to scan all 5 categories simultaneously:
+The **events endpoint** groups related markets and shows 24h volume, which is far more informative than total volume.
 
 ```bash
-# Sports — events in next 14 days
-python3 /root/workspace/polymarket/scripts/fetch_markets.py --category sports --min-volume 3000 --limit 30
+# Most active events right now (24h volume)
+python3 scripts/fetch_markets.py --events --limit 100 --sort-by volume24hr
 
-# Politics — elections, policy, geopolitical
-python3 /root/workspace/polymarket/scripts/fetch_markets.py --category politics --min-volume 5000 --limit 30
+# Events expiring in next 7 days (short-term focus)
+python3 scripts/fetch_markets.py --events --expiring-days 7 --limit 50
 
-# Commodities — oil, gold, gas
-python3 /root/workspace/polymarket/scripts/fetch_markets.py --category commodities --min-volume 2000 --limit 20
+# Sports events (upcoming games)
+python3 scripts/fetch_markets.py --events --tags Sports --limit 50
 
-# Crypto — BTC/ETH price, regulatory
-python3 /root/workspace/polymarket/scripts/fetch_markets.py --category crypto --min-volume 5000 --limit 20
+# Politics/geopolitics
+python3 scripts/fetch_markets.py --events --tags Politics --limit 30
+python3 scripts/fetch_markets.py --events --tags Geopolitics --limit 30
 
-# High volume everything else
-python3 /root/workspace/polymarket/scripts/fetch_markets.py --min-volume 10000 --limit 50
+# Elections (upcoming)
+python3 scripts/fetch_markets.py --events --tags Elections --limit 30
 ```
 
-### 3. Initial Screen
+### 3. News-First Research
 
-For each market, do a quick price check:
-- If YES price is 95–100% or 0–5%: market is near-resolved, skip
-- If volume < $2,000: skip [LOW_LIQUIDITY]
-- If resolves in < 6 hours: skip [EXPIRES_SOON]
-- If resolution criteria mention "at discretion" or "admin": skip [AMBIGUOUS_RESOLUTION]
+Search for current events, THEN find matching Polymarket markets:
 
-### 4. Edge Screen
+```bash
+# Search for today's big stories
+WebSearch("major news events today March 2026 prediction markets")
+WebSearch("upcoming elections March April 2026")
+WebSearch("sports results today March 2026 upcoming games")
+```
 
-For remaining markets, estimate fair value using:
-- Known base rates (from `knowledge/market_types/`)
-- Current news (1 search per market: `WebSearch("<question> latest")`)
-- Calibration adjustment (`python3 scripts/calibration.py --category <cat>`)
+Then search for specific topics:
+```bash
+python3 scripts/fetch_markets.py --events --search "election"
+python3 scripts/fetch_markets.py --events --search "Iran"
+python3 scripts/fetch_markets.py --events --search "bitcoin"
+```
 
-Flag as **candidate** if estimated edge ≥ 4pp.
+### 4. Short-Term Priority Screen (≤7 days)
 
-### 5. Rank Candidates
+From all fetched events, filter for end_date ≤ today+7. For each:
+- Extract all markets in 5–95% YES range with vol > $1k
+- These are highest priority — faster feedback, more calculable
+- Flag [EXPIRING_7D] markets for immediate attention
 
-Sort by expected value: `edge_pp × recommended_kelly_size / 100`
-Take top 5 for deep research.
+### 5. Edge Screen (all horizons)
 
-### 6. Output Scan Report
+For each candidate market:
+- Check YES price range: skip if 0–5% or 95–100%
+- Skip if vol < $2,000 [LOW_LIQUIDITY]
+- Skip if resolves < 6h [EXPIRES_SOON]
+- Check resolution criteria: skip if "at discretion" or "admin" [AMBIGUOUS_RESOLUTION]
+- Estimate fair value: 1 WebSearch per market + knowledge/market_types/ base rates
+- Compare to sportsbook lines for sports markets
+- Flag as candidate if edge ≥ 4pp
+
+### 6. Rank and Research
+
+Sort candidates by EV = edge_pp × kelly_size.
+For top 3: run deep research via `/research <market>`.
+
+### 7. Output Scan Report
 
 Write to `output/reports/scan_{datetime}.md`:
 
@@ -59,32 +92,37 @@ Write to `output/reports/scan_{datetime}.md`:
 # Market Scan — {datetime}
 
 ## Summary
-- Markets fetched: {N}
-- After liquidity filter: {N}
-- After resolution filter: {N}
-- Candidates with edge ≥ 4pp: {N}
+- Events browsed: {N}
+- Short-term candidates (≤7 days): {N}
+- Long-term candidates (>7 days): {N}
+- Trades placed: {N}
 
-## Top Candidates
+## Short-Term Opportunities (≤7 days)
+| Market | Expires | YES% | Fair Value | Edge | Action |
 
-| Rank | Market | Cat | Market % | Fair Value | Edge | Action |
-|------|--------|-----|----------|-----------|------|--------|
-| 1 | {question} | sports | 42% | 55–60% | +15pp | BET YES |
+## Long-Term Opportunities (>7 days)
+| Market | YES% | Fair Value | Edge | Action |
 
-## Passed Markets ({N})
-{brief reason per category — e.g., "Sports: 8 markets scanned, all well-priced"}
+## Search Strategies Tried
+{list what you searched — helps future scans try different angles}
 
 ## Next Steps
-- Deep research: {list top 3 by name}
-- Monitor (expiring soon): {list}
 ```
 
-### 7. Trigger Deep Research
+### 8. Execute Approved Trades
 
-For each top candidate, run `/research <market_question>`.
+For each candidate with edge ≥ 4pp and confidence ≥ medium:
+1. Write trade file BEFORE executing
+2. Size with Kelly: `python3 scripts/kelly.py --help`
+3. Update positions.json and bankroll.json
+
+---
 
 ## Scan Constraints
 
 - If bankroll < $1,000: reduce all position sizes by 50%
-- If 3+ losses in last 5 trades: require edge > 8pp for candidates
-- If a category has 3+ consecutive losses: add +4pp to edge requirement for that category only
+- If 3+ losses in last 5 trades: require edge > 8pp
+- If a category has 3+ consecutive losses: add +4pp to edge requirement for that category
 - Never flag [LOW_LIQUIDITY] or [AMBIGUOUS_RESOLUTION] markets as candidates
+- Short-term (≤7d) preference: when edge is equal, prefer shorter horizon
+- Always try at least 3 different search strategies before concluding "nothing found"

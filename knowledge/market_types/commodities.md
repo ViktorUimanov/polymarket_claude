@@ -36,6 +36,27 @@
 **Rule**: For monthly binary targets (e.g., "WTI ≥ $100 before end of March"), monitor the geopolitical situation daily. A ceasefire or diplomatic breakthrough can move the price by 15–20% overnight, converting a near-certain WIN to a LOSS.
 **Current risk**: Iran-US ceasefire risk exists while Hormuz remains closed.
 
+### Rule 5 — Administration/Treasury Statements Are Tier-1 Price Signals
+**Date learned**: 2026-03-16 (WTI $100 YES early exit)
+**Rule**: Explicit public statements by the Treasury Secretary or White House projecting specific commodity prices are tier-1 signals. Weight them at ±15pp or more to fair value estimates. Do not discount as posturing or noise.
+**Why**: Bessent appeared on CNBC and stated US would allow Iranian oil tankers through Hormuz and projected oil "well below $80." This was an administration-level policy signal, not analyst commentary. WTI settlement fell from $98.71 to $93.50 the same day — a 5.3% one-day drop.
+**Apply when**: Any open commodity position where Treasury/White House publicly comments on price trajectory or supply policy.
+**Specific sub-rule**: If a Tier-1 statement moves settlement price ≥ 3% in one day, run a fresh thesis check. The gap-to-target has likely widened materially.
+
+### Rule 6 — Gap Trades Require Stable Catalyst + Time Buffer
+**Date learned**: 2026-03-16 (WTI $100 YES early exit)
+**Rule**: A "gap trade" (entry thesis: "price is $X away from target, needs only Y% more") requires: (a) the fundamental catalyst causing the price spike is stable and unlikely to reverse, AND (b) there is sufficient time remaining for the gap to be closed with margin.
+**Why**: Oil $100 YES was entered at 88.8% with a $1.29 gap to target and 11 days remaining. The catalyst (Hormuz closure) proved unstable — Bessent allowed tankers through within 24 hours. The gap widened from $1.29 to $6.50 overnight.
+**Apply when**: Any trade where the entry thesis is primarily that a small price gap will be closed within the market window.
+**Specific sub-rule**: For gap trades, require the catalyst to have a median expected duration at least 2× the market window remaining.
+
+### Rule 7 — Exit Discipline: Take Profit When Market Price Exceeds Revised Fair Value
+**Date learned**: 2026-03-17 (from Trump China exit and WTI $100 YES exit, synthesized as general rule)
+**Rule**: For any position that has moved in your favor and the current market price now exceeds your REVISED fair value (after incorporating new information), exit. Do not hold waiting for full resolution if: (a) thesis has changed, AND (b) market has overshot your updated fair value.
+**Why**: Trump China YES was entered at 33¢ (fair value 44-47%). After Trump's delay statement, revised fair value dropped to 38-43%. Market moved to 48.5% — exceeding revised fair value. Exiting at 48.5¢ vs fair 40% was a +8.5pp edge in our favor. Holding to expiry would have been negative EV.
+**Apply when**: Any position where new information has materially changed the thesis AND the current market price now prices in MORE certainty than your revised estimate.
+**Complementary rule**: Do NOT exit when market moves AGAINST you but the fundamental thesis is unchanged. Market noise is not a thesis break. Only thesis breaks and market-exceeding-revised-fair-value trigger exits.
+
 ---
 
 ## WTI Crude Oil — March 2026 Context
@@ -51,9 +72,10 @@
   - Mar 12: $95.73
   - Mar 13: $98.71
 
-### Open Positions (as of 2026-03-15)
-- Oil ≥ $100 YES at 88.8¢ ($300) — gap was $1.29 on Mar 15
-- Oil ≥ $120 NO at 54.0¢ ($400) — requires 21.5% more gain from Mar 15 level
+### Open Positions (as of 2026-03-17)
+- Oil ≥ $100 YES at 88.8¢ ($300) — CLOSED early 2026-03-16 at 72.2¢, loss −$56.10. Bessent allowed Iranian tankers; IEA supply flow began. Thesis broke.
+- Oil ≥ $120 NO at 54.0¢ ($400) — open, settlement $93.50 on Mar 16. Need $120 = +28.3% from current. Thesis strong.
+- Oil $110 NO at 51.5¢ ($200) — open 2026-03-16, settlement $93.50. Need $110 = +17.6% from current. Thesis strong.
 
 ### Key Catalysts to Monitor
 - Trump statements on Iran military operations
@@ -80,7 +102,8 @@
 
 | Date | Market | Stated % | Outcome | Error |
 |------|--------|----------|---------|-------|
-| 2026-03-15 | Oil $100 YES | 91% | OPEN | — |
-| 2026-03-15 | Oil $120 NO | 62% | OPEN | — |
+| 2026-03-15 | Oil $100 YES | 91% | CLOSED EARLY (thesis break, not resolution) | N/A |
+| 2026-03-15 | Oil $120 NO | 62% | OPEN (resolves 2026-03-31) | — |
+| 2026-03-16 | Oil $110 NO | 83% | OPEN (resolves 2026-03-31) | — |
 
-No resolved trades yet. Update when oil markets close end of March 2026.
+No resolved trades yet. Early exit on $100 YES does not count as calibration data (voluntary exit on thesis change, not market resolution). Update when oil markets close end of March 2026.

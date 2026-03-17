@@ -26,6 +26,24 @@
 
 If talks collapse completely (Russia makes maximalist demands, US abandons mediation), NO edge widens. Revisit if YES price exceeds 45%.
 
+## Re-evaluation: 2026-03-16 (Second Look)
+
+**New market price**: YES 36.5% | NO 63.5% (NO side 1pp more expensive than original pass)
+
+**Re-evaluation result**: PASS confirmed.
+
+Full systematic evaluation run:
+- Pre-blend fair value: ~68% NO (range 54–78%)
+- Post-blend (80/20, $11.8M volume): 67.1% NO
+- Edge on NO: +3.6pp
+- Politics category minimum: 5pp (per knowledge/market_types/politics.md)
+- Confidence: LOW (9-month horizon, novel conflict, wide CI)
+- Hard rule: PASS unless edge >= 4pp AND confidence >= medium. Fails both criteria.
+
+Edge is actually slightly smaller than the original pass evaluation because the NO price ticked up 1pp. The case for passing is unchanged and strengthened.
+
+**Monitor trigger**: Revisit if YES price exceeds 45% (markets materially overpricing ceasefire probability on new optimistic news).
+
 ## Was this pass correct?
 
 *(to be filled at resolution, Dec 31 2026)*

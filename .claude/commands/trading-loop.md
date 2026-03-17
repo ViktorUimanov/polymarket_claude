@@ -71,21 +71,30 @@ Run `/report` if this is an end-of-day session or major trades were placed.
 
 ## Session Complete
 
-When ALL applicable checklist items are done, output:
+When ALL applicable checklist items are done for this session, output exactly:
 ```
 SESSION_COMPLETE
 ```
 
-ralph-wiggum re-feeds this prompt if it ends without `SESSION_COMPLETE` or `GOAL_REACHED`.
-The next cron trigger will start a fresh session.
+ralph-wiggum re-feeds this prompt if the session ends without a completion token.
+The cron job will trigger the next session automatically.
 
 ---
 
 ## Completion Tokens
 
-| Token | Meaning | What happens |
-|-------|---------|-------------|
-| `GOAL_REACHED` | $100k achieved — mission done | ralph stops permanently |
-| `SESSION_COMPLETE` | This session's work is done | ralph stops; cron triggers next session |
+| Token | Condition | Effect |
+|-------|-----------|--------|
+| `SESSION_COMPLETE` | All signal flags handled, no more action needed | ralph stops this session; cron wakes next one |
+| `<promise>I FINALLY EARNED</promise>` | Portfolio cash + open_exposure ≥ $100,000 (verified) | ralph stops permanently — mission complete |
 
-Never output either token until the condition is truly met.
+### CRITICAL RULES for `<promise>I FINALLY EARNED</promise>`
+
+- **NEVER output this token unless you have verified `cash + open_exposure ≥ 100000`**
+- Run the check explicitly before outputting it:
+  ```bash
+  python3 -c "import json; b=json.loads(open('output/bankroll.json').read()); total=b['cash']+b['open_exposure']; print(f'Portfolio: \${total:,.0f}'); exit(0 if total >= 100000 else 1)"
+  ```
+- If the check fails (exit code 1), output `SESSION_COMPLETE` instead
+- Do NOT output it as a farewell, summary, or sign-off — only as a verified goal confirmation
+- Outputting it falsely wastes money by terminating a loop that should keep running

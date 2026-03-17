@@ -1,10 +1,10 @@
 {
   "starting": 10000.00,
-  "cash": 8450.00,
-  "total_pnl": -200.00,
-  "open_exposure": 1350.00,
-  "last_updated": "2026-03-16 19:00 UTC",
-  "last_trade_date": "2026-03-16",
+  "cash": 7459.30,
+  "total_pnl": -335.70,
+  "open_exposure": 2205.00,
+  "last_updated": "2026-03-17 23:30 UTC",
+  "last_trade_date": "2026-03-17",
   "trade_history": [
     {
       "date": "2026-03-15",
@@ -14,6 +14,107 @@
       "outcome": "LOSS",
       "pnl": -200.0,
       "notes": "Bugonia won. Did not check all nominees."
+    },
+    {
+      "date": "2026-03-16",
+      "market": "WTI crude oil settle >= $100 before March 31",
+      "direction": "YES EXIT",
+      "size": 300.0,
+      "proceeds": 243.90,
+      "outcome": "CLOSED_EARLY",
+      "pnl": -56.10,
+      "notes": "Exited early — Bessent tanker announcement broke thesis."
+    },
+    {
+      "date": "2026-03-15",
+      "market": "Elon Musk 300-319 tweets March 10-17",
+      "direction": "YES",
+      "size": 150.0,
+      "outcome": "LOSS",
+      "pnl": -150.0,
+      "notes": "Resolved NO. Weekend slowdown was real; extrapolated weekday pace. Live count showed ~248 with 18h left — needed 52 more, only got ~20-25."
+    },
+    {
+      "date": "2026-03-16",
+      "market": "Colorado Avalanche win 2026 NHL Stanley Cup",
+      "direction": "YES",
+      "size": 35.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Fair value 27% vs market 21.6%. +5.4pp edge."
+    },
+    {
+      "date": "2026-03-17",
+      "market": "Colorado Avalanche win 2026 NHL Stanley Cup (top-up)",
+      "direction": "YES",
+      "size": 50.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Top-up at 21.6¢. Cap-constrained ($51 headroom). Brings position to $85 total. Edge +5.4pp persists vs sportsbooks +260."
+    },
+    {
+      "date": "2026-03-17",
+      "market": "Iranian regime fall before 2027",
+      "direction": "NO",
+      "size": 200.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Fair value 87% NO. Market 60.5% NO. +26.5pp edge. IRGC succession completed March 9."
+    },
+    {
+      "date": "2026-03-16",
+      "market": "US x Iran ceasefire by April 30",
+      "direction": "NO",
+      "size": 200.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Fair value 89% NO. Market 60.5% NO. +28.5pp edge. Both sides explicitly rejected talks."
+    },
+    {
+      "date": "2026-03-16",
+      "market": "Crude Oil $110 settlement by March 31",
+      "direction": "NO",
+      "size": 200.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Fair value 83% NO. Market 51.5% NO entry. +31.5pp edge. Settlement only, max was $98.71."
+    },
+    {
+      "date": "2026-03-16",
+      "market": "Slovenia SDS most seats",
+      "direction": "NO",
+      "size": 100.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Fair value 70-75% YES. Market 81% YES. +6-11pp NO edge. Race tightened. Resolves March 22."
+    },
+    {
+      "date": "2026-03-17",
+      "market": "Trump visits China by April 30",
+      "direction": "YES CLOSED",
+      "size": 150.0,
+      "proceeds": 220.4,
+      "outcome": "CLOSED_EARLY",
+      "pnl": 70.4,
+      "notes": "Thesis changed: Trump explicitly requested delay by 'a month or so'. Fair value dropped from 44-47% to 38-43%. Market moved to 48.5% — negative EV to hold. Locked profit."
+    },
+    {
+      "date": "2026-03-17",
+      "market": "Netanyahu out by June 30",
+      "direction": "NO",
+      "size": 150.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Fair value 94% NO. Market 85.5% NO. +8.5pp edge. Status quo play. Death rumor debunked. Budget vote on track to pass."
+    },
+    {
+      "date": "2026-03-17",
+      "market": "Ken Paxton wins 2026 Texas Republican Primary",
+      "direction": "YES",
+      "size": 170.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Fair value 52% YES. Market 38.5% YES. +13.5pp edge. Post-primary poll: Paxton +3pp in runoff. Trump endorsement pending = key risk/catalyst."
     }
   ]
 }

@@ -17,3 +17,20 @@ Jobs created:
 ## To Restart
 Run `/restart-loop` in a Claude Code session before the expiry time.
 Crons are session-only — they do NOT persist if Claude exits.
+
+---
+
+## 2026-03-17 17:38 UTC — Migrated to OS-level crontab (PERSISTENT)
+
+Session-based crons replaced with OS crontab (`crontab -e`). These survive session restarts and reboots.
+
+| Job | Schedule | Command |
+|-----|----------|---------|
+| Heartbeat | `*/13 * * * *` | `python3 scripts/heartbeat.py` |
+| Wake agent (scan/resolve/learn) | `*/37 * * * *` | `scripts/wake_agent.sh` |
+| Daily learn | `17 2 * * *` | `scripts/wake_agent.sh` |
+| Daily report | `47 2 * * *` | `scripts/wake_agent.sh` |
+
+**Logs**: `output/reports/cron_wake.log`
+**No expiry. No manual restart needed.**
+**Max budget per wake: $3.00 (hardcoded in wake_agent.sh)**

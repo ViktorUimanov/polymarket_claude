@@ -84,6 +84,19 @@
 - **2022**: CODA — SAG winner won BP over The Power of the Dog despite BAFTA/DGA going to TPoD
 - **2006**: Crash — late surge won BP over Brokeback Mountain
 
+### Rule 6 — Multi-outcome markets require full enumeration before forming a view
+**Date learned**: 2026-03-16 (synthesis)
+**Rule**: In any multi-outcome market (Best Picture, Best Director, etc.), list ALL nominees with their current market prices and assign an independent fair-value estimate to EACH before comparing to markets. Never let residual "other" be unitemized.
+**Why**: The Oscars loss stemmed from betting Sinners without ever examining Bugonia. Bugonia was priced ~2–5% but won. A mandatory enumeration step would have forced a look at every option.
+**Apply when**: Every Oscars bet, and any multi-outcome market where the bettor is focused on the top-2.
+**Specific sub-rule**: When assigning fair values, check: does my full slate sum to ~100%? If not, re-allocate before placing any bet.
+
+### Rule 7 — Adverse market moves > 10pp require fresh thesis check (not exit reflex)
+**Date learned**: 2026-03-16 (synthesis — from WTI $100 YES observation)
+**Rule**: If any open position's market price moves adversely by ≥ 10pp from entry, run a fresh fundamental thesis check before deciding to hold or exit. Check whether the repricing reflects new fundamental information or is market noise.
+**Apply when**: Any open position with a >10pp adverse market price move.
+**Specifically**: Do not exit on price movement alone. Do not ignore it either.
+
 ---
 
 ## Calibration History

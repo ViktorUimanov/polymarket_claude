@@ -41,7 +41,7 @@ def scan_needed() -> bool:
     t = latest_report_time("scan_")
     if t is None:
         return True
-    return (NOW - t) > timedelta(hours=4)
+    return (NOW - t) > timedelta(minutes=45)
 
 
 def resolve_needed(positions: list) -> bool:

@@ -1,6 +1,48 @@
 {
-  "last_updated": "2026-03-16 19:00 UTC",
+  "last_updated": "2026-03-17 22:45 UTC",
   "positions": [
+    {
+      "market_id": "1466016",
+      "question": "US x Iran ceasefire by April 30?",
+      "category": "politics",
+      "direction": "NO",
+      "entry_price": 0.605,
+      "shares": 330.6,
+      "size": 200.0,
+      "entry_date": "2026-03-16",
+      "end_date": "2026-04-30",
+      "stated_prob": 89.0,
+      "trade_file": "output/trades/2026-03-16_iran-ceasefire-april-no.md",
+      "notes": "Fair value 89% NO. Market 60.5% NO. +28.5pp edge. Trump rejected talks March 14-15. Iran FM rejected ceasefire March 15-16. War only 17 days old, both sides maximalist. EV +$113."
+    },
+    {
+      "market_id": "1467765",
+      "question": "Will Crude Oil (CL) hit (HIGH) $110 by end of March?",
+      "category": "commodities",
+      "direction": "NO",
+      "entry_price": 0.515,
+      "shares": 388.3,
+      "size": 200.0,
+      "entry_date": "2026-03-16",
+      "end_date": "2026-03-31",
+      "stated_prob": 83.0,
+      "trade_file": "output/trades/2026-03-16_oil-110-settlement-no.md",
+      "notes": "Fair value 83% NO. Market now 64.2% NO. +31.5pp edge at entry. WTI settlement ~$96 today. Need $110 settlement = +14.6% from here. Correlated with $120 NO. Total oil: $600."
+    },
+    {
+      "market_id": "954518",
+      "question": "Will the Slovenian Democratic Party (SDS) win the most seats in the 2026 Slovenian parliamentary election?",
+      "category": "politics",
+      "direction": "NO",
+      "entry_price": 0.190,
+      "shares": 526.3,
+      "size": 100.0,
+      "entry_date": "2026-03-16",
+      "end_date": "2026-03-22",
+      "stated_prob": 27.5,
+      "trade_file": "output/trades/2026-03-22_slovenia-sds-no.md",
+      "notes": "Fair value 70-75% YES (SDS). Market 81% YES. +6-11pp edge on NO. Race tightened. Resolves March 22. MONITOR: check election results."
+    },
     {
       "market_id": "958443",
       "question": "Will the Iranian regime fall by June 30, 2026?",
@@ -13,21 +55,7 @@
       "end_date": "2026-06-30",
       "stated_prob": 88.0,
       "trade_file": "output/trades/2026-03-16_iran-regime-june-no.md",
-      "notes": "Fair value 88-92% NO. Market 70.5% NO. +17-22pp edge. IRGC intact, succession completed. Max 3% politics cap."
-    },
-    {
-      "market_id": "1467766",
-      "question": "Will WTI crude oil settle at or above $100 before end of March 2026?",
-      "category": "commodities",
-      "direction": "YES",
-      "entry_price": 0.888,
-      "shares": 337.84,
-      "size": 300.0,
-      "entry_date": "2026-03-15",
-      "end_date": "2026-03-31",
-      "stated_prob": 91.0,
-      "trade_file": "output/trades/2026-03-15_crude-oil-100-high.md",
-      "notes": "Gap was $1.29 on entry day (settlement $98.71 vs $100 target). 11 trading days remaining."
+      "notes": "Fair value 88-92% NO. Market 70.5% NO unchanged. IRGC intact, succession completed. Lebanon invasion does not destabilize Iran regime directly."
     },
     {
       "market_id": "1467763",
@@ -41,7 +69,7 @@
       "end_date": "2026-03-31",
       "stated_prob": 62.0,
       "trade_file": "output/trades/2026-03-15_crude-oil-120-high-no.md",
-      "notes": "Settlement price systematically below intraday. Max settlement $98.71, need 21.5% more gain."
+      "notes": "Settlement price systematically below intraday. WTI today ~$96 settlement. Need $120 = +25% from here in 14 days. Market NO at 78.5%. Thesis holding well."
     },
     {
       "market_id": "566187",
@@ -55,21 +83,97 @@
       "end_date": "2026-05-27",
       "stated_prob": 95.0,
       "trade_file": "output/trades/2026-03-15_arsenal-epl.md",
-      "notes": "9-point lead, 9 games remaining. Historical: 97-99% conversion rate."
+      "notes": "9-point lead, 9 games remaining. Historical: 97-99% conversion rate. CL vs Leverkusen second leg today (March 17) — 1-1 from first leg, playing at Emirates. Monitor result."
     },
     {
-      "market_id": "musk-tweets-march-2026",
-      "question": "Will Elon Musk post 300-319 tweets March 10-17, 2026?",
+      "market_id": "703257",
+      "question": "Will the US confirm that aliens exist before 2027?",
       "category": "other",
+      "direction": "NO",
+      "entry_price": 0.845,
+      "shares": 236.7,
+      "size": 200.0,
+      "entry_date": "2026-03-16",
+      "end_date": "2026-12-31",
+      "stated_prob": 90.0,
+      "trade_file": "output/trades/2026-03-16_aliens-uap-no.md",
+      "notes": "Fair value 90-92% NO. Market 84.5% NO. +5.5-7.5pp edge. Resolution bar high. Monitor quarterly."
+    },
+    {
+      "market_id": "663583",
+      "question": "Will the Iranian regime fall before 2027?",
+      "category": "politics",
+      "direction": "NO",
+      "entry_price": 0.605,
+      "shares": 330.6,
+      "size": 200.0,
+      "entry_date": "2026-03-17",
+      "end_date": "2026-12-31",
+      "stated_prob": 87.0,
+      "trade_file": "output/trades/2026-03-17_iran-regime-2027-no.md",
+      "notes": "Fair value 87% NO. Market 60.5% NO. +26.5pp edge. Succession completed March 9. Correlated with 958443 (Iran June NO). Total Iran direct: $400."
+    },
+    {
+      "market_id": "553828",
+      "question": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "category": "sports",
       "direction": "YES",
-      "entry_price": 0.285,
-      "shares": 526.3,
+      "entry_price": 0.216,
+      "shares": 393.0,
+      "size": 85.0,
+      "entry_date": "2026-03-16",
+      "end_date": "2026-06-30",
+      "stated_prob": 27.0,
+      "trade_file": "output/trades/2026-03-16_colorado-avalanche-cup.md",
+      "notes": "Fair value 27% vs market 21.6%. +5.4pp edge. League-best +82 goal differential. Topped up $50 on 2026-03-17 (cap-constrained). Total $85, 393 shares. Monitor playoffs.",
+      "top_up_date": "2026-03-17",
+      "top_up_amount": 50.0,
+      "top_up_file": "output/trades/2026-03-17_colorado-avalanche-topup.md"
+    },
+    {
+      "market_id": "1484987",
+      "question": "Netanyahu out by June 30?",
+      "category": "politics",
+      "direction": "NO",
+      "entry_price": 0.855,
+      "shares": 175.4,
       "size": 150.0,
-      "entry_date": "2026-03-15",
-      "end_date": "2026-03-17",
-      "stated_prob": 37.5,
-      "trade_file": "output/trades/2026-03-15_musk-tweets-300-319.md",
-      "notes": "227 tweets through 5 days. Pace: 45.4/day. Projected: ~318. PAST END DATE — run /resolve to check outcome. Market ID is a placeholder — real ID unknown (low volume market)."
+      "entry_date": "2026-03-17",
+      "end_date": "2026-06-30",
+      "stated_prob": 94.0,
+      "trade_file": "output/trades/2026-03-17_netanyahu-june30-no.md",
+      "notes": "Fair value 94% NO. Market 85.5% NO. +8.5pp edge. Status quo play: no-confidence requires 61 votes (impossible). Budget vote likely passes. Death rumor fully debunked. Correlation: mild Israel/Iran adjacency. Exposure $150."
+    },
+    {
+      "market_id": "562186",
+      "question": "Will Ken Paxton win the 2026 Texas Republican Primary?",
+      "category": "politics",
+      "direction": "YES",
+      "entry_price": 0.385,
+      "shares": 441.6,
+      "size": 170.0,
+      "entry_date": "2026-03-17",
+      "end_date": "2026-05-26",
+      "stated_prob": 52.0,
+      "trade_file": "output/trades/2026-03-17_paxton-texas-senate-yes.md",
+      "notes": "Fair value 52% YES. Market 38.5% YES. +13.5pp edge. March 5-6 poll: Paxton leads 45-42 in runoff. March 3 primary: Cornyn 43, Paxton 41 — coin flip. Trump endorsement pending = key uncertainty. EXIT if Trump endorses Cornyn."
+    }
+  ],
+  "closed_positions": [
+    {
+      "market_id": "706279",
+      "question": "Will Trump visit China by April 30?",
+      "direction": "YES",
+      "entry_price": 0.330,
+      "exit_price": 0.485,
+      "shares": 454.5,
+      "entry_date": "2026-03-16",
+      "exit_date": "2026-03-17",
+      "size": 150.0,
+      "proceeds": 220.4,
+      "pnl": 70.4,
+      "reason": "Thesis change: Trump explicitly said delay by 'month or so' / '5-6 weeks'. Fair value dropped from 44-47% to 38-43%. Market 48.5% now exceeds revised fair value — negative EV to hold. Locked +$70.4 profit.",
+      "trade_file": "output/trades/2026-03-17_trump-china-exit.md"
     }
   ]
 }

@@ -25,13 +25,14 @@ One read. Full situational awareness. Then act.
 **Layer 1 — Heartbeat** (every 13 min, Python only, no LLM):
 `python3 scripts/heartbeat.py` → writes `knowledge/signal.json`
 
-**Layer 2 — Sessions** (cron-triggered, ralph-wiggum keeps each alive):
-- Every 37 min: `/scan`
-- Every 67 min: `/resolve`
-- Daily 02:17: `/learn`
-- Daily 02:47: `/report`
+**Layer 2 — Sessions** (cron-triggered every 20 min):
+Every session does ALL of the following in order:
+1. **Resolve** — check all open positions for resolution
+2. **Scan** — always scan for new opportunities, every session, no exceptions
+3. **Learn** — synthesize if new resolved trades exist
 
-Run `/restart-loop` every 72 hours (crons auto-expire).
+Scanning is not optional. Every session must search for edge.
+
 Run `/trading-loop` to start a deep manual session.
 
 ## Agents
