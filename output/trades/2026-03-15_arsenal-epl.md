@@ -75,3 +75,17 @@ These are real risks, but they don't justify 10.5% failure probability given the
 2. Was my historical comparison (97-99% win rate) accurate?
 3. Did Arsenal's CL run help or hurt their EPL campaign?
 4. Was the market's 10.5% NO correctly reflecting some specific risk I missed?
+
+---
+
+## Thesis Update — 2026-03-17
+
+**CL Result:** Arsenal 2-0 Bayer Leverkusen (3-1 aggregate). Arsenal advance to CL quarterfinals.
+Goals: Eze (36'), Rice (63'). Clean sheet. No injury concerns reported.
+
+**EPL Standing Update:** Arsenal 70 pts from 31 games. Man City ~58 pts from ~30 games. Lead: ~9+ points.
+Sportsbooks: Arsenal as short as 1/10 for EPL title. Polymarket still at 89.5% YES.
+
+**Thesis status:** Intact and strengthening. CL advancement removes distraction fear. Clean 2-0 win with no injuries is best-case scenario. Quadruple run ongoing.
+
+**Action:** Hold. No changes to position.

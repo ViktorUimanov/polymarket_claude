@@ -1,6 +1,6 @@
 # Trade: Slovenian Parliamentary Election — SDS wins most seats? — NO
 
-**Status:** OPEN
+**Status:** CLOSED — VOLUNTARY EXIT 2026-03-18 (break-even, thesis invalidated)
 **Date:** 2026-03-16
 **Market ID:** 954518
 **Market:** Will the Slovenian Democratic Party (SDS) win the most seats in the 2026 Slovenian parliamentary election?
@@ -56,6 +56,16 @@ Market resolves YES if SDS (Janez Janša's party) wins the most seats (plurality
 
 ## Outcome
 
-**Resolution Date:** March 22, 2026
-**Result:** [PENDING]
-**P&L:** [PENDING]
+**Resolution Date:** March 22, 2026 (not reached — exited early)
+**Exit Date:** 2026-03-18
+**Exit Price:** 0.190 (break-even)
+**Result:** CLOSED — voluntary exit before resolution
+**P&L:** $0.00
+
+**Why exited early:** Thesis invalidated. Original entry was based on a single poll (GS 24.1% vs SDS 23.2%) suggesting a statistical tie. After entry, 7 of 8 subsequent polls showed SDS with a 2.1–8.5pp lead (Mediana: SDS 30.9% vs Svoboda 22.4%). Market at 81% YES was approximately correctly priced given the broader polling consensus. Edge was zero; held position was negative-EV. Exited at break-even to redeploy capital.
+
+**Error classification:** information_error — entered on a single outlier poll without consulting the broader polling universe.
+
+**Rule learned:** `knowledge/market_types/politics.md` Rule 11 — proportional elections require 3+ independent polls showing tightening before entry.
+
+**Full post-mortem:** See `output/trades/2026-03-18_slovenia-sds-exit.md`

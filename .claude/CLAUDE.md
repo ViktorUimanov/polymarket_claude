@@ -33,7 +33,42 @@ Every session does ALL of the following in order:
 
 Scanning is not optional. Every session must search for edge.
 
+**Scan must cover ALL angles every session:**
+- Expiring ≤7 days (highest priority)
+- Sports (all tags, all leagues — niche markets have more alpha)
+- Elections globally
+- Politics + Geopolitics
+- Top volume (awareness only)
+- Small/medium markets ($500–$50k vol) — fewer traders = more mispricings
+- News-first: 3+ WebSearches before fetching markets
+
+**Learning is not optional either. Every resolved trade must produce:**
+- Post-mortem written to `output/trades/` immediately
+- Rule extracted and written to `knowledge/market_types/<category>.md`
+- Calibration DB updated via `scripts/calibration.py --record`
+- Edge source updated in `knowledge/edge_sources.md`
+
+The system only improves if it learns from every outcome. A loss without a lesson is double the loss.
+
 Run `/trading-loop` to start a deep manual session.
+
+## OpenSpace Skill System
+
+OpenSpace is connected as an MCP server. It provides self-evolving skills that improve over time.
+
+**Available MCP tools:**
+- `mcp__openspace__search_skills` — search for reusable skill patterns before doing a task from scratch
+- `mcp__openspace__execute_task` — delegate a complex multi-step task to OpenSpace
+- `mcp__openspace__fix_skill` — repair a broken skill when tools/APIs change
+
+**When to use:**
+- Before writing a new research or data-processing workflow → search first: `search_skills(query="...", source="local")`
+- After a successful trade pattern → OpenSpace will AUTO-LEARN it into a reusable skill automatically
+- When a skill breaks (e.g. API format change) → `fix_skill(skill_dir="...", direction="what broke")`
+
+**NEVER use `upload_skill`** — trading edge must stay private. All evolved skills are local only.
+
+**Skills directory:** `.claude/skills/` — newly evolved skills appear here as subdirectories with `SKILL.md`.
 
 ## Agents
 

@@ -2,13 +2,21 @@ Perform a systematic market opportunity scan. The goal is to find edge — not j
 
 ## Scan Philosophy
 
-**Top markets by volume = worst place for edge.** The best opportunities are in:
+**Top markets by volume = worst place for edge.** High volume = many eyes = efficient pricing. Alpha lives elsewhere:
+- **Medium and small markets** ($500–$50k volume) — fewer traders, slower price discovery, more mispricings
 - Short-term events (next 1–7 days) where you can calculate probabilities from current data
-- Events with less volume but clear information advantage
+- Niche sports, local elections, regional economic data — not covered by big accounts
 - Markets where the crowd is anchored to narrative, not fundamentals
 - Specific match/game markets where sportsbook lines differ from Polymarket
 
-Always trial-and-error. Try new search strategies. If one approach finds nothing, try a different angle.
+**Minimum viable scan covers ALL of these every session:**
+1. Top volume (for awareness only — rarely bet here)
+2. Sports (all tags, not just top leagues)
+3. Elections/Politics (global, not just US)
+4. Low-volume expiring markets (≤7 days, vol $500–$10k)
+5. News-first: search today's headlines → find matching markets
+
+Always trial-and-error. If one search angle finds nothing, try a different one. Never declare "nothing found" after a single fetch.
 
 ---
 
@@ -21,63 +29,81 @@ cat knowledge/signal.json
 ```
 Read `knowledge/edge_sources.md` to know what has produced edge before.
 
-### 2. Fetch Events (PRIMARY — do this first)
+### 2. Fetch Events — MANDATORY MULTI-ANGLE SWEEP
 
-The **events endpoint** groups related markets and shows 24h volume, which is far more informative than total volume.
+Run ALL of these every session. Do not skip any category.
 
 ```bash
-# Most active events right now (24h volume)
-python3 scripts/fetch_markets.py --events --limit 100 --sort-by volume24hr
+# TIER 1: Short-term expiring (highest alpha — calculable outcomes)
+python3 scripts/fetch_markets.py --events --expiring-days 7 --limit 100
 
-# Events expiring in next 7 days (short-term focus)
-python3 scripts/fetch_markets.py --events --expiring-days 7 --limit 50
+# TIER 2: Sports (all — niche leagues often mispriced)
+python3 scripts/fetch_markets.py --events --tags Sports --limit 100
 
-# Sports events (upcoming games)
-python3 scripts/fetch_markets.py --events --tags Sports --limit 50
+# TIER 3: Elections globally
+python3 scripts/fetch_markets.py --events --tags Elections --limit 50
 
-# Politics/geopolitics
-python3 scripts/fetch_markets.py --events --tags Politics --limit 30
+# TIER 4: Politics + Geopolitics
+python3 scripts/fetch_markets.py --events --tags Politics --limit 50
 python3 scripts/fetch_markets.py --events --tags Geopolitics --limit 30
 
-# Elections (upcoming)
-python3 scripts/fetch_markets.py --events --tags Elections --limit 30
+# TIER 5: Top volume (awareness only — rarely bet here)
+python3 scripts/fetch_markets.py --events --limit 100 --sort-by volume24hr
 ```
 
-### 3. News-First Research
+Minimum total: **5 fetches, 400+ markets reviewed per session.**
 
-Search for current events, THEN find matching Polymarket markets:
+### 3. News-First Research (MANDATORY — do BEFORE screening)
+
+Search headlines first, then find matching markets. This finds mispricings before the crowd reprices.
 
 ```bash
-# Search for today's big stories
-WebSearch("major news events today March 2026 prediction markets")
-WebSearch("upcoming elections March April 2026")
-WebSearch("sports results today March 2026 upcoming games")
+# Today's breaking news
+WebSearch("breaking news today [current date]")
+WebSearch("sports scores results today [current date]")
+WebSearch("election results [current month year]")
+WebSearch("upcoming elections next 7 days [current month year]")
 ```
 
-Then search for specific topics:
+Then hunt specific topics from the news:
 ```bash
-python3 scripts/fetch_markets.py --events --search "election"
-python3 scripts/fetch_markets.py --events --search "Iran"
-python3 scripts/fetch_markets.py --events --search "bitcoin"
+python3 scripts/fetch_markets.py --events --search "<topic from news>"
 ```
 
-### 4. Short-Term Priority Screen (≤7 days)
+**Rule: At least 3 WebSearches per scan. News leads to markets, not the other way around.**
+
+### 4. Small/Medium Market Hunt (MANDATORY)
+
+After the main sweep, explicitly hunt for mispricings in thin markets:
+
+```bash
+# Low-volume but active (potential mispricings)
+python3 scripts/fetch_markets.py --events --expiring-days 14 --min-volume 500 --max-volume 50000 --limit 100
+```
+
+Look for: local elections, niche sports, regional economic releases, obscure political events. These have fewer traders → slower price discovery → more edge.
+
+### 5. Short-Term Priority Screen (≤7 days)
 
 From all fetched events, filter for end_date ≤ today+7. For each:
 - Extract all markets in 5–95% YES range with vol > $1k
 - These are highest priority — faster feedback, more calculable
 - Flag [EXPIRING_7D] markets for immediate attention
 
-### 5. Edge Screen (all horizons)
+### 6. Edge Screen (all horizons)
 
 For each candidate market:
 - Check YES price range: skip if 0–5% or 95–100%
-- Skip if vol < $2,000 [LOW_LIQUIDITY]
+- Volume tiers:
+  - **Large** (>$50k): require 6pp edge — these are efficient
+  - **Medium** ($5k–$50k): require 4pp edge — standard threshold
+  - **Small** ($500–$5k): require 4pp edge BUT prioritize — fewer eyes, more mispricings
+  - Skip if vol < $500 [LOW_LIQUIDITY]
 - Skip if resolves < 6h [EXPIRES_SOON]
 - Check resolution criteria: skip if "at discretion" or "admin" [AMBIGUOUS_RESOLUTION]
 - Estimate fair value: 1 WebSearch per market + knowledge/market_types/ base rates
 - Compare to sportsbook lines for sports markets
-- Flag as candidate if edge ≥ 4pp
+- Flag as candidate if edge meets tier threshold
 
 ### 6. Rank and Research
 

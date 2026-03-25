@@ -3,7 +3,7 @@
 Where edge has actually been found. Each source tracks success rate over time.
 A source is "active" only if it has produced at least 1 win OR has strong theoretical basis.
 
-Last reviewed: 2026-03-17 (synthesis run)
+Last reviewed: 2026-03-22 21:00 UTC (Paris Mayor Grégoire YES resolved WIN +$79.70 — Edge Source 7 confirmed; electoral structural framework validates as reproducible edge)
 
 ---
 
@@ -62,37 +62,79 @@ Last reviewed: 2026-03-17 (synthesis run)
 ---
 
 ### 4. Geopolitical Status Quo Bias
-**Status**: ACTIVE LIVE TEST (3 trades, 0 resolved — promoted from Potential 2026-03-17)
-**Description**: Markets systematically overestimate the probability of dramatic short-term political/military change (ceasefires, regime falls, diplomatic agreements). Historical base rates show ~70% probability of no dramatic change within 30–90 days in active conflicts. Markets price dramatic change at 2–4× the historical rate.
-**Key fact**: Iran regime fall 2027 priced at 39.5% YES by market vs our estimate of 13% (3× overpriced). Iran ceasefire by April 30 priced at 39.5% YES vs our estimate of 11% (3.6× overpriced).
-**Signal**: Any "dramatic change by X" market where: (a) no change is already well underway, (b) key actors have explicitly rejected the change, (c) market prices change at > 20%
-**Best market type**: "Ceasefire by [date]", "Regime falls by [date]", "Leader resigns by [date]"
+**Status**: ACTIVE LIVE TEST (4 trades, 0 resolved — extended with Israel-Saudi 2026-03-17)
+**Description**: Markets systematically overestimate the probability of dramatic short-term political/military change (ceasefires, regime falls, diplomatic agreements). Historical base rates show ~70% probability of no dramatic change within 30–90 days in active conflicts. Markets price dramatic change at 2–4× the historical rate. Also applies to long-horizon normalization deals that require multi-party ratification.
+**Key fact**: Iran regime fall 2027 priced at 39.5% YES by market vs our estimate of 13% (3× overpriced). Iran ceasefire by April 30 priced at 39.5% YES vs our estimate of 11% (3.6× overpriced). Israel-Saudi normalize priced at 20.5% YES vs our estimate of 9% (2.3× overpriced).
+**Signal**: Any "dramatic change by X" market where: (a) no change is already well underway, (b) key actors have explicitly rejected the change, (c) market prices change at > 15%
+**Best market type**: "Ceasefire by [date]", "Regime falls by [date]", "Leader resigns by [date]", "Normalize relations by [date]"
 **Active trades**:
 - Iran ceasefire Apr 30 NO ($200, resolves 2026-04-30, +28.5pp edge at entry)
 - Iran regime fall June NO ($200, resolves 2026-06-30, +17-22pp edge at entry)
 - Iran regime fall 2027 NO ($200, resolves 2026-12-31, +26.5pp edge at entry)
-- Total Iran correlated exposure: $600 (6.2% bankroll — within 10% cap)
+- Israel-Saudi normalize by 2027 NO ($139, resolves 2026-12-31, +11.5pp edge at entry)
+- Total Iran correlated exposure: $600 (AT cap — no new Iran NOs)
+- Israel-Saudi: inversely correlated to Iran cluster (provides partial hedge — see trade file for correlation analysis)
 **Confirmed wins**: 0 (all trades open)
 **Losses**: 0
 **Success rate**: UNTESTED — first data point expected April 30, 2026
-**Last updated**: 2026-03-17
+**Last updated**: 2026-03-18
 
-### 5. Sportsbook vs Polymarket Pricing Gap on Major Sports Futures
-**Status**: ACTIVE LIVE TEST (1 trade, 0 resolved)
-**Description**: For major sports futures (NHL, NBA, EPL) with high Polymarket volume (> $5M), Polymarket prices lag sportsbook consensus by 4–8pp on analytics-favored teams. Sportsbooks have dedicated quant teams and sharp bettor flow that converge to more efficient prices.
-**Signal**: Sportsbook consensus (3+ books) exceeds Polymarket by ≥ 5pp on the favored team AND Polymarket volume > $5M
-**Best market type**: NHL Stanley Cup, NBA Finals, EPL winner futures where analytics clearly favor one team
-**Active trades**: Colorado Avalanche Stanley Cup YES ($35, 21.6% Polymarket vs 25.7-27.8% sportsbooks, resolves 2026-06-30)
-**Confirmed wins**: 0 (trade open)
+### 5. Sportsbook vs Polymarket Pricing Gap on Sports Futures and Awards
+**Status**: FIRST DATA POINT — WIN (Kucherov early exit +$578.57; 4 trades still open)
+**Description**: Polymarket prices on sports futures and individual award markets lag sportsbook consensus. The gap is largest on thin-volume markets (<$15k) where fewer sharp bettors participate. Sportsbooks with dedicated quant staff converge faster on updated odds.
+**Signal (high-volume futures)**: Sportsbook consensus (3+ books) exceeds Polymarket by ≥ 5pp AND Polymarket volume > $5M
+**Signal (thin award markets)**: Sportsbook consensus (3+ books) exceeds Polymarket by ≥ 10pp AND Polymarket volume < $15k — size capped at $100 for liquidity
+**EXIT SIGNAL (confirmed 2026-03-22)**: When Polymarket price EXCEEDS sportsbook consensus by >10pp (gap inverted), exit immediately. The original edge is gone; continuing to hold is a directional bet without structural basis.
+**Best market type**: NHL/NBA team futures, EPL winner, individual awards (Hart Trophy, Norris, NBA MVP)
+**Active trades**:
+  - Colorado Avalanche Stanley Cup YES ($235 total, avg 21.1¢ Polymarket vs 25.7-27.8% sportsbooks, resolves 2026-06-30) — 3 entries; gap persistent despite Kadri acquisition
+  - Scottie Scheffler Masters YES ($190 total, avg 17.64¢ Polymarket vs 19-25% sportsbooks, resolves 2026-04-13) — initial $140 + $50 top-up on Players Champ health confirmation
+  - OKC Thunder NBA YES ($120, 37.5% Polymarket vs 43.3% sportsbooks, resolves 2026-07-01) — first large-volume ($5M+) extension; 5.8pp gap
+  - Tampa Bay Lightning Cup YES ($75, 12.3% Polymarket vs 18-20% sportsbooks, resolves 2026-06-30) — Eastern Conference leaders; DK +400 (20%) vs PM 12.3%; +7.7pp gap; correlated with Avalanche (only one NHL team wins)
+**Gap magnitude by market size**: thin (<$15k): 10-20pp | mid ($50k-$5M): 5-8pp | large ($5M+): 4-6pp. Pattern is consistent across all market sizes — structural, not transient.
+**Extension note (2026-03-17)**: Gap is proportionally LARGER in thin individual award markets. The hypothesis applies but sizing must be constrained by liquidity (≤ 1% of total pool).
+**Persistent gap signal (2026-03-18)**: Avalanche gap has not closed after 3 top-up entries over 3 days. Lightning gap confirmed same pattern. Both confirm the gap is structural (thin NHL markets, no active arbitrageurs) rather than transient.
+**NHL total correlated exposure**: $310 (Avalanche $235 + Lightning $75) = 3.2% bankroll. Both teams cannot win — anti-correlated outcomes. Monitor total and do not add further NHL YES positions without reducing one.
+**Confirmed wins (early exits)**: 1 — Kucherov Hart Trophy exited Mar 22 at ~38¢ (entry 5.6¢), +$578.57 profit (+578.6%). Gap inverted from PM underpriced to PM overpriced by 15pp — triggered exit signal.
 **Losses**: 0
-**Success rate**: UNTESTED
-**Last updated**: 2026-03-17
+**Success rate**: 1/1 early exits (100% — insufficient data; resolution outcomes pending April–July 2026)
+**Last updated**: 2026-03-22 session1
+
+### 7. Electoral Structural Framework — First-Round Leader in Incumbent Left-Majority City
+**Status**: FIRST DATA POINT — WIN (Paris Mayor 2026, +$79.70)
+**Description**: In French municipal two-round elections held in cities with entrenched left majorities, the first-round leader with a 10pp+ margin carries a structural advantage that Polymarket systematically underprices. The structural factors — 25-year incumbent bloc, vote consolidation from satellite left parties, historical base rate of first-round leader winning — dominate late-horizon "tightening narrative" polls. Markets price in uncertainty from MoE-tight final polls; structural analysis correctly overrides.
+**Signal**: First-round leader with ≥10pp margin in a city with ≥20-year unbroken incumbent governance + satellite party voters likely to useful-vote toward the leader + Polymarket < 80% YES
+**Lesson**: When hard vote counts (actual R1 results) are available, weight them more than subsequent opinion polls. A tight final poll (45.5 vs 44.5 in the Elabe March 20 survey) reflects polling noise, not a genuine paradigm shift. Structural factors dominate.
+**Best market type**: French two-round municipal elections; potentially applicable to similar runoff structures (Brazilian Presidential, other two-round systems)
+**Confirmed wins**: 1 — Paris Mayor Grégoire YES (+$79.70, 2026-03-22). Entry 71.5¢, resolution 100¢. FV 80%, Polymarket 71.5%, edge +8.5pp.
+**Losses**: 0
+**Success rate**: 1/1 (100% — first data point; expand dataset before relying heavily)
+**Last updated**: 2026-03-22 21:00 UTC
+
+---
+
+### 6. Principal Actor Statement — Thesis-Change Rapid Exit (and Bidirectional Re-Entry)
+**Status**: FIRST DATA POINT — WIN (1 realized gain; < 5 trades — TESTING)
+**Description**: When a principal actor (President, head of state, key decision-maker) makes a direct, on-record statement that invalidates the entry thesis, exit immediately even if market has not fully repriced. The market will lag the news, creating a temporary sell window at a better price than fair value. ADDITIONALLY: after exiting, immediately re-evaluate the reverse direction — the same statement may open a new opposite-direction entry if the market still misprices the revised fair value.
+**Key mechanics**: (a) Principal statement carries stronger weight than secondary spokesperson denial, (b) Exit while the market is still processing — do NOT wait for confirmation, (c) Lock realized gain before the market corrects to the new fair value, (d) After exit, run fresh probability estimate with new information — if revised fair value differs from new market price by >= minimum edge, enter opposite direction.
+**What confirmed it (2026-03-17)**: Trump explicitly said he asked China to delay the visit by "a month or so." Fair value dropped from 44-47% to 38-43%. Market was still at 48.5% (above our new fair value). Exited entire 454.5-share position at 48.5¢ vs entry 33.0¢. Net: +$70.40.
+**What extended it (2026-03-18)**: Market corrected from 48.5% to 39.5% YES but remained above revised fair value of 25-32% YES. Entered NO at 60.5c with +14.5pp edge. The Trump delay statement was a two-sided signal — it both forced an exit AND opened a new entry.
+**Signal**: Principal actor makes an explicit, direct statement on the key variable AND (a) market price remains above revised fair value by ≥ 5pp [for exit] OR (b) market price, after partial repricing, remains mispriced vs revised fair value by >= minimum edge threshold [for new entry].
+**Confirmed wins**: 1 (Trump China YES exit, +$70.40, 2026-03-17)
+**Losses**: 0
+**Open applications**: 1 (Trump China NO, $150, entered 2026-03-18, resolves April 30)
+**Success rate**: 1/1 (100% — insufficient data, 1 trade)
+**Key trade files**: `output/trades/2026-03-17_trump-china-exit.md` + `output/trades/2026-03-18_trump-china-no.md`
+**Last updated**: 2026-03-18 session2
+
+---
 
 ## Potential Edge Sources (Untested — Proposed)
 
 | Source | Hypothesis | Status |
 |--------|-----------|--------|
-| Tightening-race proportional election | Market > 75% for one party but polls show statistical tie → market overconfident | LIVE TEST — Slovenia SDS NO (2026-03-16, $100, resolves 2026-03-22). First data point available March 22. |
+| Tightening-race proportional election | Market > 75% for one party but polls show statistical tie → market overconfident | INCONCLUSIVE — Slovenia SDS NO exited break-even 2026-03-18. Thesis invalidated by broader polling universe (7/8 polls showed SDS +2-8pp lead). Entry error: relied on single outlier poll. Revised entry condition: requires 3+ independent polls confirming tightening. Not a negative data point for the hypothesis — it is a lesson about entry quality. Re-test with better entry criteria. |
+| National team brand premium vs injury-adjusted probability | Polymarket prices national teams at their historical brand strength; when 5+ starters are injured in a knockout format, injury-adjusted probability diverges significantly from market-implied | TESTING — Italy WC NO ($150, Mar 18). Italy brand 61% YES; injury-adjusted 44% YES (7 absences including Verratti); +11pp edge on NO at 39c. Resolves effectively March 26 (Italy semi-final). |
 | Tournament upset correction | Early-round heavy favorites underpriced by casual bettors | Proposed |
 | Thin market inefficiency | Markets with < $5k volume hold stale prices for hours | Proposed — requires real-time monitoring |
 | Interest rate near-certainty | Fed meetings with 99%+ consensus: no edge worth taking | Confirmed — don't bet |

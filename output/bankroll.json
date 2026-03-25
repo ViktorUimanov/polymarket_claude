@@ -1,11 +1,30 @@
 {
   "starting": 10000.00,
-  "cash": 7459.30,
-  "total_pnl": -335.70,
-  "open_exposure": 2205.00,
-  "last_updated": "2026-03-17 23:30 UTC",
-  "last_trade_date": "2026-03-17",
+  "cash": 6756.70,
+  "total_pnl": 514.52,
+  "open_exposure": 3757.80,
+  "last_updated": "2026-03-23 ~15:00 UTC (Antonelli F1 YES $200 at 17.8¢ entered; 20 open positions; cash reduced by $200)",
+  "last_trade_date": "2026-03-23",
   "trade_history": [
+    {
+      "date": "2026-03-23",
+      "market": "F1 George Russell 2026 champion NO — EXIT",
+      "direction": "NO EXIT",
+      "size": 260.0,
+      "proceeds": 254.17,
+      "outcome": "CLOSED_EARLY",
+      "pnl": -5.83,
+      "notes": "Exit trigger: SB gap closed from +18.5pp to 1.5pp (post-Chinese GP, books upgraded Russell to -125 / 58%). Rule: exit when SB within 5pp of PM. Minimal loss, capital recycled."
+    },
+    {
+      "date": "2026-03-23",
+      "market": "Denmark PM Mette Frederiksen YES",
+      "direction": "YES",
+      "size": 200.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Red bloc won Danish election (90 seats, majority). Frederiksen = clear next PM. FV 95% vs market 80%. +15pp edge. 24-48h duration. Politics cap $200 (1.9%)."
+    },
     {
       "date": "2026-03-15",
       "market": "Sinners Best Picture (Oscars 2026)",
@@ -50,7 +69,7 @@
       "size": 50.0,
       "outcome": "OPEN",
       "pnl": null,
-      "notes": "Top-up at 21.6¢. Cap-constrained ($51 headroom). Brings position to $85 total. Edge +5.4pp persists vs sportsbooks +260."
+      "notes": "Top-up at 21.6¢. Brings position to $85 total. Best record in NHL (95 pts through 63 games)."
     },
     {
       "date": "2026-03-17",
@@ -77,16 +96,17 @@
       "size": 200.0,
       "outcome": "OPEN",
       "pnl": null,
-      "notes": "Fair value 83% NO. Market 51.5% NO entry. +31.5pp edge. Settlement only, max was $98.71."
+      "notes": "Fair value 83% NO. Market 61.7% NO as of Mar 17 (+10pp favorable). Settlement ~$96, need +15%."
     },
     {
       "date": "2026-03-16",
       "market": "Slovenia SDS most seats",
-      "direction": "NO",
+      "direction": "NO EXIT",
       "size": 100.0,
-      "outcome": "OPEN",
-      "pnl": null,
-      "notes": "Fair value 70-75% YES. Market 81% YES. +6-11pp NO edge. Race tightened. Resolves March 22."
+      "proceeds": 100.0,
+      "outcome": "CLOSED_EARLY",
+      "pnl": 0.0,
+      "notes": "Exit at break-even. Thesis invalidated: 7/8 polls show SDS +5-8.6pp lead. Original entry based on single outlier poll showing statistical tie. Market at 81% now correctly priced."
     },
     {
       "date": "2026-03-17",
@@ -96,7 +116,7 @@
       "proceeds": 220.4,
       "outcome": "CLOSED_EARLY",
       "pnl": 70.4,
-      "notes": "Thesis changed: Trump explicitly requested delay by 'a month or so'. Fair value dropped from 44-47% to 38-43%. Market moved to 48.5% — negative EV to hold. Locked profit."
+      "notes": "Thesis changed: Trump requested delay. Fair value dropped below market price. Locked profit."
     },
     {
       "date": "2026-03-17",
@@ -105,7 +125,7 @@
       "size": 150.0,
       "outcome": "OPEN",
       "pnl": null,
-      "notes": "Fair value 94% NO. Market 85.5% NO. +8.5pp edge. Status quo play. Death rumor debunked. Budget vote on track to pass."
+      "notes": "Fair value 94% NO. Market 85.5% NO. +8.5pp edge. Budget vote on track."
     },
     {
       "date": "2026-03-17",
@@ -114,7 +134,164 @@
       "size": 170.0,
       "outcome": "OPEN",
       "pnl": null,
-      "notes": "Fair value 52% YES. Market 38.5% YES. +13.5pp edge. Post-primary poll: Paxton +3pp in runoff. Trump endorsement pending = key risk/catalyst."
+      "notes": "Original entry. Fair value 52% → upgraded to 61%. Market 38.5%."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "Ken Paxton wins 2026 Texas Republican Primary (top-up)",
+      "direction": "YES",
+      "size": 290.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Top-up at 38.5¢. Fox 26: Paxton leads 44-43 EVEN IF Trump endorses Cornyn. Fair value upgraded to 61%. +22.5pp edge. Total Paxton: $460."
+    },
+    {
+      "date": "2026-03-17",
+      "market": "Scottie Scheffler wins 2026 Masters Tournament",
+      "direction": "YES",
+      "size": 140.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Fair value 24.5% vs market 17.5%. +7pp edge. Sportsbooks +300 to +430. Tournament starts April 9."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "US acquires Greenland before 2027",
+      "direction": "NO",
+      "size": 193.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Fair value 96% NO. Market 90.3% NO. +5.7pp edge. Resolution requires actual sovereignty transfer — not base agreement. Legal process 3-step ratification physically cannot complete in 2026."
+    },
+    {
+      "date": "2026-03-17",
+      "market": "Nikita Kucherov wins 2026 NHL Hart Trophy",
+      "direction": "YES EARLY EXIT",
+      "size": 100.0,
+      "proceeds": 678.57,
+      "outcome": "CLOSED_EARLY",
+      "pnl": 578.57,
+      "notes": "Gap inverted: PM 41.6% vs sportsbooks 27%. Original thesis (PM underpriced vs sportsbooks) fully resolved and overshot. Exit at 38¢ avg (1,785.7 shares × 38¢). +578.6% return on $100."
+    },
+    {
+      "date": "2026-03-17",
+      "market": "Israel-Saudi Arabia normalize before 2027",
+      "direction": "NO",
+      "size": 139.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Fair value 91% NO vs market 79.5% NO. +11.5pp edge. Iran war blocks normalization. Palestinian pathway block. Middle East Institute: normalization slipping away. Inversely correlated with Iran NOs."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "OKC Thunder win 2026 NBA Finals",
+      "direction": "YES",
+      "size": 120.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Standing trigger: ≤38% → BET. +135 sportsbook (43.3%) vs PM 37.5%. +5.8pp gap. Record 52-15, reigning champions."
+    },
+    {
+      "date": "2026-03-22",
+      "market": "Emmanuel Grégoire wins Paris mayor election",
+      "direction": "YES",
+      "size": 200.0,
+      "proceeds": 279.70,
+      "outcome": "WIN",
+      "pnl": 79.70,
+      "notes": "Resolved YES 2026-03-22. Grégoire elected Paris mayor defeating Dati. Structural left-majority + first-round leader (+12pp) thesis confirmed. Entry 71.5¢, resolved 100¢, 279.7 shares."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "Scottie Scheffler wins 2026 Masters (top-up)",
+      "direction": "YES",
+      "size": 50.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Trigger met: Scheffler competed at Players Champ (healthy). Top-up +$50 at 18¢. Total position: $190."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "Colorado Avalanche win 2026 NHL Stanley Cup (top-up 2)",
+      "direction": "YES",
+      "size": 150.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Top-up at ~21¢. Total Avalanche: $235, 1114 shares. Best NHL record 95 pts."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "Tampa Bay Lightning win 2026 NHL Stanley Cup",
+      "direction": "YES",
+      "size": 75.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Sportsbook gap: DK +400 (20%) vs PM 12.3%. +7.7pp edge. Eastern Conference leaders. Kucherov 106pts. NHL YES total $310 (3.2% bankroll). Sized conservatively due to Avalanche correlation."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "Italy qualifies for 2026 FIFA World Cup",
+      "direction": "NO",
+      "size": 150.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "7 injuries (Verratti, Di Lorenzo, Calafiori, Udogie, Rovella, Leoni, Gabbia). Two-game knockout path. 80% × 55% = 44% qualify. Market 61% YES overprices Italy's brand. +11pp edge on NO at 39¢. Semi-final March 26 effectively resolves direction."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "Hungary Fidesz-KDNP wins most seats (parliamentary election)",
+      "direction": "YES EXIT",
+      "size": 80.0,
+      "proceeds": 80.0,
+      "outcome": "CLOSED_EARLY",
+      "pnl": 0.0,
+      "notes": "Exit condition triggered: Tisza 14-20pp lead in independent polls exceeds 10pp threshold. Structural mechanism (~8-10pp) insufficient. Break-even exit. Rule extracted: require polling composite before structural election bets, don't enter at theoretical tipping point."
+    },
+    {
+      "date": "2026-03-22",
+      "market": "F1 2026 Drivers Championship — George Russell NO",
+      "direction": "NO",
+      "size": 260.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Sportsbook gap: PM 55.5% YES vs SB de-vigged ~30-38% YES. Post-China (Race 2 Antonelli WIN, 4pt gap) further widens gap. FV 37% YES / 63% NO. Edge +18.5pp. Kelly 1/6 fractional: $360 (used $260, conservative for unconfirmed post-China live odds). Season-long F1 futures."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "WTI crude oil settle >= $120 before March 31 (EXIT)",
+      "direction": "NO EXIT",
+      "size": 400.0,
+      "proceeds": 533.33,
+      "outcome": "CLOSED_EARLY",
+      "pnl": 133.33,
+      "notes": "Capital reallocation. Position had 0pp remaining edge at 72¢ NO (entry 54¢, +18pp). Recycled into Oil-105 NO which has +39.5pp edge on same underlying/expiry."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "Crude Oil (CL) hit $105 by end of March",
+      "direction": "NO",
+      "size": 186.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Capital reallocation from Oil-120. WTI ~$96, needs +9-12% for $105 settlement. Fair value 72-80% NO. +39.5pp edge. Settlement mechanics: intraday vs CME settlement gap. Fills commodities cap: $200+$186=$386."
+    },
+    {
+      "date": "2026-03-23",
+      "market": "Crude Oil (CL) settle at $90+ in March",
+      "direction": "YES",
+      "size": 34.80,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Market 1487357. YES at 76.5¢. FV 94% YES. +17.5pp edge. WTI $98.23 today — needs 8.4% crash in 8 days to lose. Iran war + Hormuz closure = structural support. Commodities cap now full: $386+$34.80=$420.80."
+    },
+    {
+      "date": "2026-03-18",
+      "market": "Will Trump visit China by April 30, 2026?",
+      "direction": "NO",
+      "size": 150.0,
+      "outcome": "OPEN",
+      "pnl": null,
+      "notes": "Re-enter as NO after previously exiting YES at +$70.40. Trump on-record March 17 delay 'month or so.' Iran war blocks trip. Fair value 75% NO, market 60.5% NO. +14.5pp edge. Sized $150 (1.55% bankroll) — half politics cap, applying correlation discount for Iran exposure ($600 direct already at cap). Rule 8 + Geopolitical Status Quo."
     }
   ]
 }

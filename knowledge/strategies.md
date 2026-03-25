@@ -4,7 +4,7 @@ Strategies are systematic patterns for finding edge. Each has a status, evidence
 
 **Statuses**: WINNING (>55% win rate, ≥5 trades) | TESTING (<5 trades) | UNDERPERFORMING (<45%, ≥5 trades) | RETIRING (0 wins last 5) | RETIRED
 
-Last reviewed: 2026-03-17 (synthesis run)
+Last reviewed: 2026-03-18 session2 (end-of-day fourth synthesis pass — sportsbook gap extended to Lightning (5th trade); Italy WC NO added as new injury-adjusted-squad TESTING strategy; Trump China post-exit re-entry documented as bidirectional principal statement application; proposed rules-compliance-checker skill; all strategy statuses confirmed current)
 
 ---
 
@@ -71,20 +71,42 @@ Last reviewed: 2026-03-17 (synthesis run)
 ## TESTING Strategies (recently promoted from Proposed)
 
 ### Geopolitical Tail Risk Discount
-**Status**: TESTING (3 active trades, 0 resolved)
+**Status**: TESTING (4 active NO trades + 1 indirect, 0 resolved)
 **Hypothesis**: During active conflicts, markets for "conflict resolution" (ceasefire, regime fall) are systematically underpriced at low probabilities, and "escalation" events are overpriced at high probabilities. The status quo has more inertia than markets price.
 **Evidence needed**: 5+ geopolitical markets across multiple conflicts
 **Entry signal**: "Conflict ends by X" at > 15%, regime survival at < 90% despite structural stability
-**Active trades**: Iran regime fall June NO ($200, resolves 2026-06-30), Iran regime fall 2027 NO ($200, resolves 2026-12-31), Iran ceasefire April 30 NO ($200, resolves 2026-04-30). All entered at 17–29pp edge.
-**Last updated**: 2026-03-17
+**Active trades**: Iran regime fall June NO ($200, resolves 2026-06-30), Iran regime fall 2027 NO ($200, resolves 2026-12-31), Iran ceasefire April 30 NO ($200, resolves 2026-04-30). All entered at 17–29pp edge. Also Netanyahu out by June 30 NO ($150, resolves 2026-06-30) and Israel-Saudi normalize NO ($139, resolves 2026-12-31).
+**Last updated**: 2026-03-18
 
 ### Sportsbook vs Polymarket Pricing Gap
-**Status**: TESTING (1 active trade, 0 resolved)
-**Hypothesis**: For major sports futures (NHL, NBA, EPL) with high volume, Polymarket systematically lags sportsbook consensus on favored teams by 4–8pp. The edge is on the YES side for teams the sportsbooks favor more than Polymarket does.
-**Entry signal**: Sportsbook consensus (3+ books) > Polymarket price by ≥ 5pp on a team with high-volume market (> $5M)
-**Required check**: Sportsbooks must agree (not one outlier); team must be analytics favorite (not just popular sentiment)
-**Active trades**: Colorado Avalanche Stanley Cup YES ($35 at 21.6% vs 25.7-27.8% sportsbooks, resolves 2026-06-30)
-**Last updated**: 2026-03-17
+**Status**: TESTING (5 active trades, 0 resolved — extended to golf, individual awards, large-volume NBA futures, and second NHL team)
+**Hypothesis**: For sports futures and individual award markets, Polymarket systematically lags sportsbook consensus. The gap is largest on thin-volume markets (<$15k) where 3–4× mispricings occur. On high-volume team futures ($5M+), gap is 4–6pp. On thin award markets/golf, gap is 10–20pp. The gap persists because Polymarket's crypto-native user base discounts sports analytics vs sportsbook quant teams.
+**Entry signal (large-volume team futures, $5M+)**: Sportsbook consensus (3+ books) > Polymarket price by ≥ 5pp — 1/6 Kelly, cap 1.5% bankroll
+**Entry signal (golf / mid-volume, $50k-$5M)**: Sportsbook consensus (3+ books) > Polymarket price by ≥ 5pp AND multi-book agreement — cap 2% bankroll (single-event high variance)
+**Entry signal (individual awards / thin, <$15k)**: Sportsbook consensus (3+ books) > Polymarket price by ≥ 10pp — size capped at $100 for liquidity
+**Required check**: Sportsbooks must agree (not one outlier); analytics must confirm the signal is not sentiment-driven
+**Active trades**:
+  - Colorado Avalanche Stanley Cup YES ($235 total across 3 entries at avg 21.1¢ vs 25.7-27.8% sportsbooks, resolves 2026-06-30) — third entry 2026-03-18 ($150) on persistent gap
+  - Scottie Scheffler Masters YES ($190 total, avg 17.64¢ vs 22% sportsbook consensus, resolves 2026-04-13) — initial $140 + $50 top-up on Players Champ healthy confirmation
+  - Kucherov Hart Trophy YES ($100 at 5.6% vs 14-18% revised sportsbooks, resolves 2026-06-30) — thin market extension; HOLD, do not top up
+  - OKC Thunder NBA YES ($120 at 37.5% vs 43.3% sportsbooks, resolves 2026-07-01) — first large-volume ($5M+) extension of strategy; standing trigger ≤38%
+  - Tampa Bay Lightning Cup YES ($75 at 12.3% vs 18-20% sportsbooks, resolves 2026-06-30) — second NHL team; DK +400 (20%) vs PM 12.3%; +7.7pp gap; EC leaders 40-21-4; Kucherov 106pts; correlated with Avalanche (anti-correlated outcomes — both cannot win)
+**Insight from Kucherov trade**: Gap is proportionally LARGER in thin individual award markets. Sportsbooks move faster — Kucherov gap narrowed from 3.5× to 2.5× after BET99 moved from +255 to +600, signaling MacKinnon became dominant. Validate sportsbook consensus is stable before entry in thin markets.
+**Insight from Avalanche third entry**: Persistent gap after 3 entries confirms structural inefficiency (thin NHL market, no sharp arbitrageurs). Top-ups justified while sportsbooks maintain 5pp+ gap.
+**Insight from OKC trade**: Gap exists even in large, efficient markets. Reigning champions with best record are systematically underpriced by Polymarket crowd (regression-to-mean anchoring).
+**Insight from Lightning trade**: The same NHL structural inefficiency confirmed on a second team simultaneously. The entire Polymarket NHL board compresses teams toward the mean (~6.25% = 1/16 teams). Any EC/WC leaders with elite records and 18%+ sportsbook consensus are worth evaluating. NHL total YES exposure capped at $310 (Avalanche + Lightning) — do not add further NHL YES positions without one exiting or resolving first.
+**Gap magnitude confirmed across market types**: thin individual awards (<$15k): 10-20pp; mid futures ($50k-$5M): 5-8pp; large futures ($5M+): 4-6pp.
+**Last updated**: 2026-03-18 session2
+
+### National Team Brand Premium vs Injury-Adjusted Squad Probability
+**Status**: TESTING (1 active trade, 0 resolved — first test)
+**Hypothesis**: National team tournament markets price the team's historical brand (FIFA ranking, reputation) rather than the specific squad available. When 5+ key players are confirmed injured in a short-window knockout tournament, injury-adjusted probability diverges significantly from market-implied probability, creating edge on the underdog side.
+**Mechanism**: Market crowd applies a historical base rate for strong nations without rebuilding probability from the actual squad. Weak national bench depth (especially for defensive positions) is systematically underweighted. In two-game knockout formats, compounded probability drops faster than linear extrapolation suggests.
+**Entry signal**: 5+ confirmed absences including 1+ key playmakers + two-game-or-more knockout format + market price for strong team YES > (injury-adjusted probability + 8pp) → bet NO (underdog to qualify/advance)
+**Historical base rate check**: Italy missed 2018 WC (Sweden) and 2022 WC (North Macedonia). Brand does not guarantee qualification with a depleted squad.
+**Active trades**: Italy WC NO ($150 at 39c, fair value 50% NO, resolves effectively March 26, 2026)
+**First data point**: March 26, 2026 (Italy vs Northern Ireland semi-final)
+**Last updated**: 2026-03-18 session2
 
 ## Proposed Strategies (Not Yet Tested)
 
@@ -93,11 +115,24 @@ Last reviewed: 2026-03-17 (synthesis run)
 **Evidence needed**: 5+ tournament markets
 **Entry signal**: Implied probability > 85% for a team vs opponent with 2:1+ record advantage
 
+### French Two-Round Election: First-Round Lead as Edge Signal
+**Status**: TESTING (1 active trade, 0 resolved)
+**Hypothesis**: In French two-round municipal elections, a candidate who leads Round 1 by 10+ pp wins the runoff approximately 80-90% of the time. Polymarket prices the runoff conservatively (underweighting the structural advantages of the R1 leader), creating systematic edge on YES for the frontrunner.
+**Mechanism**: French voters in Round 2 consolidate behind the bloc leader. In triangular races with a left-wing third candidate, LFI voters useful-vote for the left frontrunner (~75%) rather than their candidate, widening the effective margin.
+**Entry signal**: R1 leader margin ≥ 10pp AND structural bloc majority (left or right) AND post-R1 polling shows ≥ 5pp lead in triangular race AND market prices YES < 80%
+**Active trades**: Paris Mayor Grégoire YES ($200, fair value 80%, market 71.5%, +8.5pp edge, resolves 2026-03-22)
+**First data point**: Paris Mayor runoff March 22, 2026
+**Last updated**: 2026-03-18
+
 ### Tightening-Race Proportional Election Edge
+**Status**: TESTING — first live test INCONCLUSIVE (position exited before resolution; thesis invalidated by new polling data)
 **Hypothesis**: When a proportional election market prices one party at 75%+ but recent polls show the race within polling-error range, the market is systematically overconfident. The edge is on the "upset" side.
-**Evidence needed**: 3+ proportional elections where pre-election polls showed a tightening race
-**Entry signal**: Market > 75% for one outcome but recent polling aggregate shows the race within 5pp
-**Active test**: Slovenia SDS NO ($100, resolves 2026-03-22). Market at 81% YES vs statistical tie in March polls.
+**Evidence needed**: 3+ proportional elections where pre-election polls showed a tightening race (entry AND broader polling universe must confirm tightening)
+**Refined entry signal**: Market > 75% for one outcome AND 3+ independent polls show the race within 5pp — single poll tightening is NOT sufficient
+**What happened (Slovenia)**: Entered SDS NO at 19¢ based on one Ipsos poll (GS 24.1% vs SDS 23.2%). Exited at break-even 2 days later when 7 of 8 subsequent polls showed SDS ahead by 2-8pp. Market at 81% was approximately correctly priced.
+**Lesson**: The hypothesis is not invalidated — a single outlier poll was not a valid entry signal. Must require polling consensus before entry.
+**Trades**: 1 inconclusive exit (Slovenia SDS NO, $0 P&L, 2026-03-18 — thesis invalidated, not resolved)
+**Last updated**: 2026-03-18
 
 ---
 
