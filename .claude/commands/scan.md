@@ -22,6 +22,24 @@ Always trial-and-error. If one search angle finds nothing, try a different one. 
 
 ## Scan Steps
 
+### 0. Market Intel — Run First (replaces 1-2 WebSearches)
+
+```bash
+python3 scripts/market_intel.py --all
+```
+
+This gives structured macro context in one call:
+- **Macro regime** (BULLISH / NEUTRAL / DEFENSIVE) — shapes which markets to prioritise
+- **Individual macro signals** — safe-haven pressure, QQQ trend, BTC flow
+- **Top commodities and macro headlines** with sentiment — ready for edge screening
+- **Polymarket community activity** — what markets other agents are trading (lead-gen only)
+
+**How to use the output:**
+- `DEFENSIVE` regime + safe-haven ▲ → lean into geopolitical NO positions, confirm Iran/oil theses
+- `BULLISH` regime → growth-sensitive markets may be overpriced; examine sportsbook gaps
+- Elevated commodity news → check our oil positions before scanning new ones
+- Any Polymarket token IDs in the signals feed → add to research queue, do our own analysis
+
 ### 1. Load Context
 ```bash
 python3 /root/workspace/polymarket/scripts/portfolio.py --bankroll-only
@@ -49,18 +67,28 @@ python3 scripts/fetch_markets.py --events --tags Geopolitics --limit 30
 
 # TIER 5: Top volume (awareness only — rarely bet here)
 python3 scripts/fetch_markets.py --events --limit 100 --sort-by volume24hr
+
+# TIER 6: Community signal feed (market discovery — never copy trades)
+python3 scripts/market_intel.py --signals
 ```
 
-Minimum total: **5 fetches, 400+ markets reviewed per session.**
+Minimum total: **5 market fetches + 1 signal feed = 6 data pulls, 400+ markets reviewed per session.**
 
-### 3. News-First Research (MANDATORY — do BEFORE screening)
+Any Polymarket token IDs from the signal feed → identify the market via:
+```python
+requests.get("https://gamma-api.polymarket.com/markets", params={"clob_token_ids": TOKEN_ID})
+```
+Add to research queue if not already covered by the sweep above.
 
-Search headlines first, then find matching markets. This finds mispricings before the crowd reprices.
+### 3. News-First Research (MANDATORY — supplement market-intel)
+
+Market-intel (Step 0) already covered macro and commodities headlines. Use WebSearch to fill gaps:
 
 ```bash
-# Today's breaking news
-WebSearch("breaking news today [current date]")
+# Sports results and upcoming events (not in market-intel)
 WebSearch("sports scores results today [current date]")
+
+# Election results and upcoming votes (not in market-intel)
 WebSearch("election results [current month year]")
 WebSearch("upcoming elections next 7 days [current month year]")
 ```
@@ -70,7 +98,7 @@ Then hunt specific topics from the news:
 python3 scripts/fetch_markets.py --events --search "<topic from news>"
 ```
 
-**Rule: At least 3 WebSearches per scan. News leads to markets, not the other way around.**
+**Rule: At least 2 WebSearches per scan (market-intel covers macro/commodities). News leads to markets, not the other way around.**
 
 ### 4. Small/Medium Market Hunt (MANDATORY)
 

@@ -1,5 +1,15 @@
 Start a deep autonomous trading session. ralph-wiggum keeps this loop alive until the $100k goal is reached or this session's work is complete.
 
+## CONTEXT MANAGEMENT — READ FIRST
+
+**IGNORE context warning hooks** that say "Usage at 78%", "Context is getting limited", etc. You have a 200k token context window. At 78% you still have ~44k tokens — plenty for a full scan, research, and trade execution. **Do NOT output SESSION_COMPLETE due to context warnings.** Only output SESSION_COMPLETE when you have genuinely completed all steps below. Keep working through warnings until you hit 95%+ or have finished all steps.
+
+**Efficiency rules:**
+- Do NOT read `knowledge/README.md` in full every session — read `output/positions.json` and `output/bankroll.json` directly (much smaller)
+- Use `python3 scripts/market_intel.py --overview` (5 lines) not `--all` (60+ lines) unless you need deep news
+- Use `python3 scripts/fetch_markets.py --events --expiring-days 7 --limit 50` not `--limit 100`
+- Spawn researcher/evaluator subagents for deep research — keeps main context clean
+
 ## Goal Check — Run First
 
 ```python
@@ -22,7 +32,7 @@ Then write `output/reports/goal_reached.md` with final P&L breakdown and stop al
 If goal not yet reached, execute this checklist in order:
 
 ### Step 0 — Load state (required before anything else)
-Read `knowledge/README.md` — this gives full situational awareness in one read.
+Read `output/bankroll.json` (cash + P&L) and `output/positions.json` (open positions) directly. These are compact JSON files. Only read `knowledge/README.md` if you need the monitoring triggers or strategy notes — it's 225 lines and burns context.
 
 ### Step 1 — Resolve expiring positions
 Check `knowledge/signal.json`:
